@@ -26,7 +26,7 @@ class Profile(models.Model):
     # Champs suplementaires
     
     contacts = models.CharField(max_length=30, null=True)
-    image = models.ImageField(upload_to='pic_folder/', default='useravatar.png')
+    image = models.ImageField(upload_to='profile/', default='useravatar.png')
     birth_date = models.DateField(null=True)
 
     # Initialisation a la creation
