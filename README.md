@@ -69,6 +69,9 @@ class Profile(models.Model):
     user.save()
 
 
+
+
+
 ```
 
 ## 3 login
@@ -81,6 +84,7 @@ class Profile(models.Model):
 
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 
 def connexion(request):
@@ -104,7 +108,9 @@ def connexion(request):
     else:
         return render(request, 'pages/login.html')  # page login
         
-        
+       
+       
+@login_required(login_url='/connexion')
 ```
 
 # 4 logout
